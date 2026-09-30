@@ -214,7 +214,7 @@ Project A demonstrates the following concepts from the PAP521S course:
 
 | No. | Student Name | Student Number | Primary Responsibility |
 |---|---|---|---|
-| 1 | [Student 1] | [Number] | Employee Management |
+| 1 | StudentName: Omalu Chibuike|StudentNumber: 223119059 | Employee Management |
 | 2 | [Student 2] | [Number] | Budget Management |
 | 3 | [Student 3] | [Number] | Supplier Management |
 | 4 | [Student 4] | [Number] | Asset Management |
