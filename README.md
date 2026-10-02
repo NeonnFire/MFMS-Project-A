@@ -214,10 +214,10 @@ Project A demonstrates the following concepts from the PAP521S course:
 
 | No. | Student Name | Student Number | Primary Responsibility |
 |---|---|---|---|
-| 1 | StudentName: Omalu Chibuike|StudentNumber: 223119059 | Employee Management |
+| 1 | Omalu Chibuike | 223119059 | Employee Management |
 | 2 | [Student 2] | [Number] | Budget Management |
 | 3 | [Student 3] | [Number] | Supplier Management |
-| 4 | [Student 4] | [Number] | Asset Management |
+| 4 | Roderick Dausab | 224031279 | Asset Management |
 | 5 | [Student 5] | [Number] | Reports |
 | 6 | [Student 6] | [Number] | Functions, Integration & Validation |
 | 7 | [Student 7] | [Number] | Testing, Documentation & Git Coordination |
