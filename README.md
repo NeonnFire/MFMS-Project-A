@@ -222,7 +222,6 @@ Project A demonstrates the following concepts from the PAP521S course:
 | 6 | [Student 6] | [Number] | Functions, Integration & Validation |
 | 7 | Osakwe Nelson | 223119024 | Testing, Documentation & Git Coordination |
 
-**Important:** Replace the placeholders above with your group's actual information.
 
 ---
 
