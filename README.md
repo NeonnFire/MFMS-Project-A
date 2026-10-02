@@ -220,7 +220,7 @@ Project A demonstrates the following concepts from the PAP521S course:
 | 4 | Roderick Dausab | 224031279 | Asset Management |
 | 5 | [Student 5] | [Number] | Reports |
 | 6 | [Student 6] | [Number] | Functions, Integration & Validation |
-| 7 | [Student 7] | [Number] | Testing, Documentation & Git Coordination |
+| 7 | Osakwe Nelson | 223119024 | Testing, Documentation & Git Coordination |
 
 **Important:** Replace the placeholders above with your group's actual information.
 
