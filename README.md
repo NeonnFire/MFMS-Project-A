@@ -215,7 +215,7 @@ Project A demonstrates the following concepts from the PAP521S course:
 | No. | Student Name | Student Number | Primary Responsibility |
 |---|---|---|---|
 | 1 | Omalu Chibuike | 223119059 | Employee Management |
-| 2 | [Student 2] | [Number] | Budget Management |
+| 2 | Peyelao Shafashike | 226167461 | Budget Management |
 | 3 | Annacky Munyangalala | 226075028| Supplier Management |
 | 4 | Roderick Dausab | 224031279 | Asset Management |
 | 5 | [Student 5] | [Number] | Reports |
