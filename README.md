@@ -218,7 +218,7 @@ Project A demonstrates the following concepts from the PAP521S course:
 | 2 | Peyelao Shafashike | 226167461 | Budget Management |
 | 3 | Annacky Munyangalala | 226075028| Supplier Management |
 | 4 | Roderick Dausab | 224031279 | Asset Management |
-| 5 | [Student 5] | [Number] | Reports |
+| 5 | [Soul Mbaisa] | [221104852] | Reports |
 | 6 | [Student 6] | [Number] | Functions, Integration & Validation |
 | 7 | Osakwe Nelson | 223119024 | Testing, Documentation & Git Coordination |
 
