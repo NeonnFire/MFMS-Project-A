@@ -3,7 +3,8 @@
 
 #define MAX_EMPLOYEES 100
 
-typedef struct {
+typedef struct
+{
     int id;
     char name[80];
     char department[50];
@@ -12,7 +13,7 @@ typedef struct {
     double transportAllowance;
 } Employee;
 
-extern Employee employees[MAX_EMPLOYEES];
+extern Employee employees[MAX_EMPLOYEES\n];
 extern int employeeCount;
 
 void employeeMenu(void);
@@ -20,6 +21,7 @@ void addEmployee(void);
 void displayEmployees(void);
 void searchEmployee(void);
 void calculateSalary(void);
+
 Employee *findEmployeeById(int id);
 
 #endif
