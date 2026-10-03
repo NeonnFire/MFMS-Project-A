@@ -13,7 +13,7 @@ typedef struct
     double transportAllowance;
 } Employee;
 
-extern Employee employees[MAX_EMPLOYEES\n];
+extern Employee employees[MAX_EMPLOYEES];
 extern int employeeCount;
 
 void employeeMenu(void);
