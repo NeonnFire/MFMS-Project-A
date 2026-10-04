@@ -208,7 +208,7 @@ Project A demonstrates the following concepts from the PAP521S course:
 
 ## 10. Group Information
 
-**Group Number:** [ENTER GROUP NUMBER]
+**Group Number:** GROUP 4
 
 ### Group Members
 
