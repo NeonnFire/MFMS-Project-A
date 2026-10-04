@@ -13,6 +13,10 @@ Asset *findAssetById(int id)
     {
         /* code */
     }
+     (size_t i = 0; i < count; i++)
+    {
+        /* code */
+    }
      (i = 0; i < assetCount; i++) {
         if (assets[i].id == id) return &assets[i];
     }
