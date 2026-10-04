@@ -14,7 +14,7 @@ void employeeReport(void)
     int lowestIndex = 0;
 
     double totalSalary = 0.0;
-    double average = 0.0;
+    double averageSalary = 0.0;
 
     printHeader("REPORTS > EMPLOYEE REPORT");
 
@@ -48,10 +48,10 @@ void employeeReport(void)
         }
     }
 
-    average = totalSalary / employeeCount;
+    averageSalary = totalSalary / employeeCount;
 
     printf("Total Employees : %d\n", employeeCount);
-    printf("Average Salary  : N$%.2f\n", average);
+    printf("Average Salary  : N$%.2f\n", averageSalary);
 
     printf("Highest Salary  : N$%.2f (%s)\n",
            employees[highestIndex].basicSalary
@@ -96,7 +96,8 @@ void budgetReport(void)
 
     printf("Total Allocated Budget : N$%.2f\n", allocated);
     printf("Total Expenditure      : N$%.2f\n", expenditure);
-    printf("Remaining Budget       : N$%.2f\n", allocated - expenditure);
+    printf("Remaining Budget       : N$%.2f\n",
+           allocated - expenditure);
     printf("Departments Over Budget: %d\n\n", exceeded);
 
     if (exceeded > 0) {

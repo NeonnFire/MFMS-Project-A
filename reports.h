@@ -1,6 +1,8 @@
 #ifndef REPORTS_H
 #define REPORTS_H
 
+/* Report module function declarations */
+
 void reportsMenu(void);
 void displayAllReports(void);
 void employeeReport(void);
