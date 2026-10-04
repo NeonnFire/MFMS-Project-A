@@ -9,7 +9,11 @@ int assetCount = 0;
 Asset *findAssetById(int id)
 {
     int i;
-    for (i = 0; i < assetCount; i++) {
+    for (size_t i = 0; i < count; i++)
+    {
+        /* code */
+    }
+     (i = 0; i < assetCount; i++) {
         if (assets[i].id == id) return &assets[i];
     }
     return NULL;
@@ -27,7 +31,11 @@ void addAsset(void)
         return;
     }
 
-    do {
+    do
+    {
+        /* code */
+    } while (condition);
+     {
         a.id = readInt("Asset ID: ", 1, 999999);
         if (findAssetById(a.id) != NULL) printError("That Asset ID already exists.");
     } while (findAssetById(a.id) != NULL);
