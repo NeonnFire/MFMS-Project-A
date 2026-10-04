@@ -14,6 +14,7 @@ extern Budget budgets[MAX_BUDGETS];
 extern int budgetCount;
 
 double calculateRemainingBudget(const Budget *budget);
+double calculateBudgetUtilization(const Budget *budget);
 void budgetMenu(void);
 void addBudget(void);
 void displayBudgets(void);

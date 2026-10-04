@@ -21,6 +21,11 @@ double calculateRemainingBudget(const Budget *budget)
     return budget->allocatedBudget - budget->expenditure;
 }
 
+double calculateBudgetUtilization(const Budget *budget)
+{
+    if (budget == NULL || budget->allocatedBudget <= 0.0) return 0;
+    return (budget->expenditure / budget->allocatedBudget) * 100.0;
+}
 void addBudget(void)
 {
     Budget b;
@@ -52,6 +57,7 @@ void displayBudgets(void)
 {
     int i;
     double remaining;
+    double utilization;
 
     printHeader("BUDGET MANAGEMENT > ALL BUDGETS");
 
@@ -61,18 +67,20 @@ void displayBudgets(void)
         return;
     }
 
-    printf("%-8s %-20s %16s %16s %16s %-14s\n",
-           "ID", "DEPARTMENT", "ALLOCATED", "EXPENDITURE", "REMAINING", "STATUS");
+    printf("%-8s %-20s %16s %16s %16s %12s %-14s\n",
+           "ID", "DEPARTMENT", "ALLOCATED", "EXPENDITURE", "REMAINING", "USED %", "STATUS");
     printf("-------------------------------------------------------------------------------------------------\n");
 
     for (i = 0; i < budgetCount; i++) {
         remaining = calculateRemainingBudget(&budgets[i]);
-        printf("%-8d %-20s N$%13.2f N$%13.2f N$%13.2f %-14s\n",
+        utilization = calculateBudgetUtilization(&budgets[i]);
+        printf("%-8d %-20s N$%13.2f N$%13.2f N$%13.2f %11.2f%% %-14s\n",
                budgets[i].id,
                budgets[i].department,
                budgets[i].allocatedBudget,
                budgets[i].expenditure,
                remaining,
+               utilization,
                budgets[i].expenditure <= budgets[i].allocatedBudget ? "WITHIN BUDGET" : "OVER BUDGET");
     }
     pauseScreen();
