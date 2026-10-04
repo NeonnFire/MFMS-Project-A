@@ -8,4 +8,4 @@ void budgetReport(void);
 void supplierReport(void);
 void assetReport(void);
 
-#endif
+#endif /* REPORTS_H */

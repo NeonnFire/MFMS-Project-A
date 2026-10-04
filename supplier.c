@@ -2,7 +2,39 @@
 #include "utils.h"
 #include "file_storage.h"
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
+static int isBlank(const char *s)
+{
+    while (*s) {
+        if (!isspace((unsigned char)*s)) return 0;
+        s++;
+    }
+    return 1;
+}
+
+static int isValidEmail(const char *email)
+{
+    const char *at = strchr(email, '@');
+    if (at == NULL || at == email) return 0;      /* needs text before @ */
+    const char *dot = strchr(at, '.');
+    if (dot == NULL || dot == at + 1) return 0;   /* needs a dot after @ */
+    if (dot[1] == '\0') return 0;                 /* needs text after dot */
+    return 1;
+}
+
+static int isValidPhone(const char *phone)
+{
+    size_t i, len = strlen(phone);
+    if (len < 7 || len > 15) return 0;
+    for (i = 0; i < len; i++) {
+        if (!isdigit((unsigned char)phone[i]) &&
+            phone[i] != '+' && phone[i] != '-' && phone[i] != ' ')
+            return 0;
+    }
+    return 1;
+}
 Supplier suppliers[MAX_SUPPLIERS];
 int supplierCount = 0;
 
@@ -27,14 +59,30 @@ void addSupplier(void)
         return;
     }
 
-    do {
+       /* ID: keep asking until it is unique */
+    while (1) {
         s.id = readInt("Supplier ID: ", 1, 999999);
-        if (findSupplierById(s.id) != NULL) printError("That Supplier ID already exists.");
-    } while (findSupplierById(s.id) != NULL);
+        if (findSupplierById(s.id) == NULL) break;
+        printError("That Supplier ID already exists.");
+    }
 
-    readString("Supplier Name: ", s.name, sizeof(s.name));
-    readString("Email: ", s.email, sizeof(s.email));
-    readString("Telephone: ", s.telephone, sizeof(s.telephone));
+    /* Name: must not be blank */
+    do {
+        readString("Supplier Name: ", s.name, sizeof(s.name));
+        if (isBlank(s.name)) printError("Name cannot be empty.");
+    } while (isBlank(s.name));
+
+    /* Email: must look like an email */
+    do {
+        readString("Email: ", s.email, sizeof(s.email));
+        if (!isValidEmail(s.email)) printError("Please enter a valid email (e.g. name@example.com).");
+    } while (!isValidEmail(s.email));
+
+    /* Telephone: digits, +, -, spaces only */
+    do {
+        readString("Telephone: ", s.telephone, sizeof(s.telephone));
+        if (!isValidPhone(s.telephone)) printError("Please enter a valid phone number (7-15 characters).");
+    } while (!isValidPhone(s.telephone));
     readString("Town/Location: ", s.location, sizeof(s.location));
 
     suppliers[supplierCount++] = s;
