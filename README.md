@@ -221,7 +221,7 @@ Project A demonstrates the following concepts from the PAP521S course:
 | 5 | Soul Mbaisa | 221104852 | Reports |
 | 6 | Erickson shimuni | 223073199 | Functions, Integration & Validation |
 | 7 | Osakwe Nelson | 223119024 | Testing, Documentation & Git Coordination |
-| 8 |                |                  | Search |
+| 8 | Inga N Kondo  |  225085321      | Search Managment|
 
 
 ---
