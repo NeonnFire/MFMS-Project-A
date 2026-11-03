@@ -46,6 +46,14 @@ Supplier *findSupplierById(int id)
     }
     return NULL;
 }
+static int emailExists(const char *email)
+{
+    int i;
+    for (i = 0; i < supplierCount; i++) {
+        if (strcmp(suppliers[i].email, email) == 0) return 1;
+    }
+    return 0;
+}
 
 void addSupplier(void)
 {
@@ -141,6 +149,50 @@ void searchSupplier(void)
     }
 
     if (!found) printWarning("No matching supplier found.");
+    pauseScreen();
+}
+void compareSuppliers(void)
+{
+    Supplier *a, *b;
+    int idA, idB;
+
+    printHeader("SUPPLIER MANAGEMENT > COMPARE SUPPLIERS");
+
+    if (supplierCount < 2) {
+        printWarning("At least two suppliers are needed to compare.");
+        pauseScreen();
+        return;
+    }
+
+    idA = readInt("First Supplier ID: ", 1, 999999);
+    idB = readInt("Second Supplier ID: ", 1, 999999);
+
+    a = findSupplierById(idA);
+    b = findSupplierById(idB);
+
+    if (a == NULL || b == NULL) {
+        printError("One or both supplier IDs were not found.");
+        pauseScreen();
+        return;
+    }
+
+    printf("\n%-12s %-28s %-28s\n", "", "SUPPLIER A", "SUPPLIER B");
+    printf("%-12s %-28d %-28d\n", "ID", a->id, b->id);
+    printf("%-12s %-28s %-28s\n", "Name", a->name, b->name);
+    printf("%-12s %-28s %-28s\n", "Email", a->email, b->email);
+    printf("%-12s %-28s %-28s\n", "Telephone", a->telephone, b->telephone);
+    printf("%-12s %-28s %-28s\n", "Location", a->location, b->location);
+
+    if (strcmp(a->location, b->location) == 0)
+        printf("\nBoth suppliers are in the same location.\n");
+    else
+        printf("\nThe suppliers are in different locations.\n");
+
+    if (strcmp(a->name, b->name) < 0)
+        printf("Alphabetically, %s comes before %s.\n", a->name, b->name);
+    else
+        printf("Alphabetically, %s comes before %s.\n", b->name, a->name);
+
     pauseScreen();
 }
 
