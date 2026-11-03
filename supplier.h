@@ -18,6 +18,7 @@ void supplierMenu(void);
 void addSupplier(void);
 void displaySuppliers(void);
 void searchSupplier(void);
+void compareSuppliers(void);
 Supplier *findSupplierById(int id);
 
 #endif
